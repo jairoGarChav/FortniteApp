@@ -1,0 +1,74 @@
+body {
+    max-width: 1440px;
+    /* max-height: 1024px; */
+    margin: 0 auto;
+    font-family: sans-serif;
+    background-image: url(img/inicio-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 680px;
+    margin: 175px auto;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+
+.tarjeta-partida-nueva, .tarjeta-ver-ranking {
+    background-color: #0D0A27;
+    color: white;
+    height: 214px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-left: 25px;
+    border-radius: 20px;
+}
+
+.tarjetas img {
+    display: block;
+    max-width: 118px;
+    max-height: 118px;
+}
+
+.tarjetas-texto {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 25px;
+}
+
+.tarjetas-texto h2, .tarjetas-texto p {
+    margin: 10px;
+}
+
+.borde-partida-nueva {
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(126deg, #d01fd8 0%, #92eefa 100%);
+    border-radius: 20px;
+}
+
+.borde-ver-ranking {
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(126deg, #92eefa 0%, #d01fd8 100%);
+    border-radius: 20px;
+}
+
+.tarjetas {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
