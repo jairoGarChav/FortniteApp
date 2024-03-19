@@ -1,0 +1,18 @@
+CREATE TABLE `jugadores` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `nombre` varchar(255) NULL
+);
+
+
+CREATE TABLE `partidas` (
+  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `fecha` date NOT NULL,
+  `tipo_equipo` varchar(255) NOT NULL,
+  `modo_juego` varchar(255) NOT NULL,
+  `lugar_caida` varchar(255) NOT NULL,
+  `posicion_final` int NOT NULL,
+  `numero_partida` int NOT NULL
+);
+
+ALTER TABLE Partidas
+ADD CONSTRAINT unique_numero_partida UNIQUE (numero_partida);

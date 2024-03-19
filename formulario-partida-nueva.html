@@ -4,17 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario Añadir Partida</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container-form">
+        <div class="formulario">
         <form action="#">
+            <div class="logo-h1">
+                <h1 id="h1-formulario">AÑADIR PARTIDA</h1>
+                <p>Añade las estadísticas de la partida.</p>
+            </div>
             <fieldset class="partida">
-
+                <div class="div-tipo-equipo">
+                    <p class="tipo-equipo">Tipo de equipo</p>
+                        <input type="radio" name="equipo" id="trios">
+                        <label for="trios">Tríos</label>
+                        <input type="radio" name="equipo" id="escuadrones">
+                        <label for="escuadrones">Escuadrones</label>
+                </div>
+                <div class="div-modo-juego">
+                    <p class="modo-juego">Modo de juego</p>
+                        <input type="radio" name="modo" id="competitivo">
+                        <label for="competitivo">Tríos</label>
+                        <input type="radio" name="modo" id="normal">
+                        <label for="normal">Escuadrones</label>
+                </div>
+                <div class="div-lugar-caida">
+                    <p class="lugar-caida">Lugar de caída</p>
+                        <select name="caida" id="caida">
+                            <option value="">Canchas Cancheras      🥅</option>
+                            <option value="">Carretes Conservados   🎞️</option>
+                            <option value="">Dominio Duelista       🤠</option>
+                            <option value="">El Inframundo          🔥</option>
+                            <option value="">Embarcadero Empinado   ⛵</option>
+                            <option value="">Entrada Estigia        🧞‍♂️</option>
+                            <option value="">Glaciar Grandioso      🧊</option>
+                            <option value="">Mansion Majestuosa     🏘️</option>
+                            <option value="">Monte Olimpo           ⛰️</option>
+                            <option value="">Plaza Placentera       🏙️</option>
+                            <option value="">Villa Viñedo           🍇</option>
+                            <option value="">Sin ubicación          🤦‍♂️</option>
+                        </select>
+                </div>
             </fieldset>
-            <fieldset class="partida">
-                
+            <fieldset class="estadisticas">
+                <div class="div-titulos-jugadores-muertes">
+                    <p>JUGADORES</p>
+                    <p>MUERTES</p>
+                </div>
+                <div class="jugador1">
+                    <label for="jugador1-muertes">
+                        Jugador 1
+                    </label>
+                    <input type="number">
+                </div>
+                <div class="jugador2">
+                    <label for="jugador2-muertes">
+                        Jugador 2
+                    </label>
+                    <input type="number">
+                </div>
+                <div class="jugador3">
+                    <label for="jugador3-muertes">
+                        Jugador 3
+                    </label>
+                    <input type="number">
+                </div>
+                <div class="jugador4">
+                    <label for="jugador4-muertes">
+                        Jugador 4
+                    </label>
+                    <input type="number">
+                </div>
             </fieldset>
+            <input type="submit" value="REGISTRAR DATOS">
         </form>
+        <img class="imagen-formu" src="img/form-img.jpg" alt="Imagen Fortnite">
+        </div>
+        <div class="boton-inicio">
+            <button>VOLVER A INICIO</button>
+        </div>
     </div>
 </body>
 </html>
