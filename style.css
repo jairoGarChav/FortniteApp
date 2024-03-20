@@ -329,3 +329,122 @@ input[type="submit"] {
     padding: 10px;
     border-radius: 5px;
 }
+
+/* HASTA AQUI ES DEL FORMULARIO */
+
+/* DESDE AQUI EMPIEZA LA VISTA DEL RANKING GENERAL */
+
+.container-main {
+    max-width: 960px;
+    margin: 175px auto;
+    background: #0d0a27;
+    color: white;
+    padding: 20px;
+    border: 1px solid #f521ec;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+thead {
+    /* border: 1px solid #f521ec; */
+    /* border-bottom: 1px solid #f521ec; */
+    /* border-left: 1px solid #f521ec; */
+    /* border-radius: 0px; */
+}
+
+table#ranking {
+    border-collapse: collapse;
+}
+
+tr{
+    height: 45px;
+    border-radius:9px;
+    display:block;
+    border-bottom: #08b8c9 2px solid;
+    margin-bottom: 20px;
+}
+
+th.celda-cabecera {
+    width: 135px;
+}
+
+td {
+    width: 135px;
+}
+
+.container-footer {
+    max-width: 960px;
+    margin: 175px auto;
+    /* background: #0d0a27; */
+    color: white;
+    padding: 20px;
+    /* border: 1px solid #f521ec; */
+    /* border-radius: 20px; */
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.container-footer img {
+    max-width: 325px;
+    border-radius: 22px 22px 0 0;
+}
+
+.ranking-trios {
+    background-color: #0d0a27;
+    border: 2px solid #08b8c9;
+    border-radius: 23px;
+}
+
+.ranking-escuadrones {
+    background-color: #0d0a27;
+    border: 2px solid #08b8c9;
+    border-radius: 23px;
+}
+
+#jugador-1 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-menen.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#jugador-2 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-bati.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#jugador-3 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-pablin.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#jugador-4 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-bati.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#jugador-5 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-bati.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}

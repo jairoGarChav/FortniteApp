@@ -1,71 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RANKING GENERAL</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container-main">
         <div class="container-header">
             <h1>RANKING GENERAL</h1>
         </div>
-        <div class="container-ranking">
-            <ul>
-                <li>Posición</li>
-                <li>Jugador</li>
-                <li>Muertes</li>
-                <li>Partidas</li>
-                <li>Muertes/Partidas</li>
-                <li>Victorias</li>
-                <li>Victorias/Partidas</li>
-            </ul>
-            <ul>
-                <p>1</p>
-                <p>Jugador 1</p>
-                <p>60</p>
-                <p>26</p>
-                <p>2,31</p>
-                <p>5</p>
-                <p>19%</p>
-            </ul>
-            <ul>
-                <p>2</p>
-                <p>Jugador 2</p>
-                <p>54</p>
-                <p>26</p>
-                <p>2,08</p>
-                <p>5</p>
-                <p>19%</p>
-            </ul>
-            <ul>
-                <p>3</p>
-                <p>Jugador 3</p>
-                <p>31</p>
-                <p>19</p>
-                <p>1,63</p>
-                <p>4</p>
-                <p>21%</p>
-            </ul>
-            <ul>
-                <p>4</p>
-                <p>Jugador 4</p>
-                <p>10</p>
-                <p>7</p>
-                <p>1,43</p>
-                <p>1</p>
-                <p>19%</p>
-            </ul>
-            <ul>
-                <p>5</p>
-                <p>Jugador 5</p>
-                <p>6</p>
-                <p>6</p>
-                <p>1,00</p>
-                <p>1</p>
-                <p>17%</p>
-            </ul>
-        </div>
+        <table class="tabla-ranking" id="ranking">
+            <thead>
+                <tr>
+                    <th class="celda-cabecera">Posición</th>
+                    <th class="celda-cabecera">Jugador</th>
+                    <th class="celda-cabecera">Muertes</th>
+                    <th class="celda-cabecera">Partidas</th>
+                    <th class="celda-cabecera">Muertes/Partidas</th>
+                    <th class="celda-cabecera">Victorias</th>
+                    <th class="celda-cabecera">Victorias/Partidas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="posicion" id="pos-1">1</td>
+                    <td class="jugador" id="jugador-1">Menen</td>
+                    <td class="muertes" id="muertes-1">60</td>
+                    <td class="partidas" id="partidas-1">26</td>
+                    <td class="muertes-por-partida" id="muertes-por-partida-1">2,31</td>
+                    <td class="victorias" id="victorias-1">5</td>
+                    <td class="victorias-por-partida" id="victorias-por-partida-1">19%</td>
+                </tr>
+                <tr>
+                    <td class="posicion" id="pos-2">2</td>
+                    <td class="jugador" id="jugador-2">Jairon</td>
+                    <td class="muertes" id="muertes-2">54</td>
+                    <td class="partidas" id="partidas-2">26</td>
+                    <td class="muertes-por-partida" id="muertes-por-partida-2">2,08</td>
+                    <td class="victorias" id="victorias-2">5</td>
+                    <td class="victorias-por-partida" id="victorias-por-partida-2">19%</td>
+                </tr>
+                <tr>
+                    <td class="posicion" id="pos-3">3</td>
+                    <td class="jugador" id="jugador-3">Pablin</td>
+                    <td class="muertes" id="muertes-3">31</td>
+                    <td class="partidas" id="partidas-3">19</td>
+                    <td class="muertes-por-partida" id="muertes-por-partida-3">1,63</td>
+                    <td class="victorias" id="victorias-3">4</td>
+                    <td class="victorias-por-partida" id="victorias-por-partida-3">21%</td>
+                </tr>
+                <tr>
+                    <td class="posicion" id="pos-4">4</td>
+                    <td class="jugador" id="jugador-4">Jairin</td>
+                    <td class="muertes" id="muertes-4">10</td>
+                    <td class="partidas" id="partidas-4">7</td>
+                    <td class="muertes-por-partida" id="muertes-por-partida-4">1,43</td>
+                    <td class="victorias" id="victorias-4">1</td>
+                    <td class="victorias-por-partida" id="victorias-por-partida-4">19%</td>
+                </tr>
+                <tr>
+                    <td class="posicion" id="pos-5">5</td>
+                    <td class="jugador" id="jugador-5">Bati</td>
+                    <td class="muertes" id="muertes-5">6</td>
+                    <td class="partidas" id="partidas-5">6</td>
+                    <td class="muertes-por-partida" id="muertes-por-partida-5">1,00</td>
+                    <td class="victorias" id="victorias-5">1</td>
+                    <td class="victorias-por-partida" id="victorias-por-partida-5">17%</td>
+                </tr>
+            </tbody>
+        </table>
+        
     </div>
     <div class="container-footer">
         <div class="ranking-trios">
