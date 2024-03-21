@@ -72,6 +72,40 @@ a {
     gap: 60px;
 }
 
+.agregar-jugador {
+    background-color: #0D0A27;
+    color: white;
+    /* height: 150px; */
+    padding: 15px 40px;
+    /* display: flex; */
+    /* flex-direction: row; */
+    max-width: 200px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.agregar-jugador img {
+    display: block;
+    max-width: 70px;
+}
+
+.agregar-jugador a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.borde-agregar-jugador {
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(126deg, #92eefa 0%, #d01fd8 100%);
+    border-radius: 20px;
+}
+
 /* HASTA AQUI ES DE LA HOME */
 
 /* DESDE AQUI EMPIEZA LA VISTA DEL FORMULARIO */
@@ -93,7 +127,7 @@ a {
 
 .container {
     max-width: 680px;
-    margin: 175px auto;
+    margin: 75px auto;
 }
 
 #h1-inicio {
@@ -152,6 +186,48 @@ a {
 }
 
 /* HASTA AQUI ES DE LA HOME */
+
+/* DESDE AQUI EMPIEZA formulario-jugador-nuevo */
+
+form#form-agregar-jugador {
+    max-width: 480px;
+    margin: 0 auto;
+    margin-top: 30%;
+    padding-bottom: 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    border: 2px solid #08b8c9;
+}
+
+form#form-agregar-jugador label {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+form#form-agregar-jugador input {
+    display: block;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+form#form-agregar-jugador input[type="text"] {
+    max-width: 250px;
+    height: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    border: 1px solid #08b8c9;
+    color: #f521ec;
+    /* color: white; */
+    background-color: #0d0a27;
+    margin-bottom: 20px;
+    }
+
+/* HASTA AQUI ES DE formulario-jugador-nuevo */
 
 /* DESDE AQUI EMPIEZA LA VISTA DEL FORMULARIO */
 
@@ -291,13 +367,13 @@ fieldset.estadisticas {
 
 .div-titulos-jugadores-muertes {
     display: flex;
-    gap: 50px;
+    gap: 110px;
     font-size: 16px;
 }
 
 .jugador1, .jugador2, .jugador3, .jugador4 {
     display: flex;
-    gap: 50px;
+    gap: 2px;
     font-size: 16px;
     justify-content: center;
     align-items: center;
@@ -447,4 +523,30 @@ td {
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: left;
+}
+
+.iconos-nav img {
+    max-width: 30px;
+}
+
+.container-header {
+    display: flex;
+    justify-content: center;
+}
+
+.iconos-nav {
+    position: absolute;
+    /* right: 50px; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+table#ranking {
+    margin-top: 15px;
+}
+
+.iconos-nav a {
+    position: relative;
+    right: -460px;
 }

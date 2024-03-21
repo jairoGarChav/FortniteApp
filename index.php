@@ -13,7 +13,7 @@
         <h1 id="h1-inicio">ESTADÍSTICAS FORTNITE</h1>
         <div class="tarjetas">
             <div class="borde-partida-nueva">
-                <a href="formulario-partida-nueva.html">
+                <a href="formulario-partida-nueva.php">
                     <div class="tarjeta-partida-nueva">
                         <img src="img/datos-logo.png" alt="Icono de una libreta y un bolígrafo">
                         <div class="tarjetas-texto">
@@ -33,6 +33,14 @@
                         </div>
                     </div>
                 </a>
+            </div>
+            <div class="borde-agregar-jugador">
+            <div class="agregar-jugador">
+                <a href="formulario-jugador-nuevo.html">
+                    <img src="img/add-user.png" alt="Icono añadir usuario">
+                    <h2>AGREGAR JUGADOR</h2>
+                </a>
+            </div>
             </div>
         </div>
     </div>
