@@ -24,7 +24,7 @@
                 </a>
             </div>
             <div class="borde-ver-ranking">
-                <a href="ranking-general.html">
+                <a href="ranking-general.php">
                     <div class="tarjeta-ver-ranking">
                         <img src="img/podio-logo.png" alt="Icono de una libreta y un bolígrafo">
                         <div class="tarjetas-texto">

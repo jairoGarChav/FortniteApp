@@ -8,6 +8,7 @@
 <body>
     
 <?php
+
 // DATOS TABLA PARTIDAS
 $tipo_equipo = $_GET['equipo'];
 $modo_juego = $_GET['modo'];
@@ -18,6 +19,9 @@ $muertes_jugador1 = $_GET['muertes_jugador1'];
 $muertes_jugador2 = $_GET['muertes_jugador2'];
 $muertes_jugador3 = $_GET['muertes_jugador3'];
 $muertes_jugador4 = $_GET['muertes_jugador4'];
+
+
+
 
 $servername = "localhost";
 $username = "root";
@@ -35,10 +39,8 @@ if ($conn->connect_error) {
 $jugador1_nombre = $_GET['jugador1'];
 $jugador2_nombre = $_GET['jugador2'];
 $jugador3_nombre = $_GET['jugador3'];
-$jugador4_nombre = isset($_GET['jugador4']) ? $_GET['jugador4'] : null; // Verificar si se proporcionó un nombre de jugador 4
+$jugador4_nombre = $_GET['jugador4'];
 
-// Buscar el ID del jugador en la base de datos (para jugadores 1, 2 y 3)
-// ... Código para obtener IDs de jugadores 1, 2 y 3
 // Buscar el ID del jugador en la base de datos
 $jugador1_id = null;
 $jugador2_id = null;
@@ -69,32 +71,15 @@ if ($resultado_jugador3_id->num_rows > 0) {
     $fila = $resultado_jugador3_id->fetch_assoc();
     $jugador3_id = $fila['id'];
 }
-// if ($resultado_jugador4_id->num_rows > 0) {
-//     $fila = $resultado_jugador4_id->fetch_assoc();
-//     $jugador4_id = $fila['id'];
-// }
-
-// Buscar el ID del jugador 4 en la base de datos si se proporcionó un nombre
-$jugador4_id = null;
-if ($jugador4_nombre !== null) {
-    $sql_jugador4_id = "SELECT id FROM jugadores WHERE nombre = '$jugador4_nombre'";
-    $resultado_jugador4_id = $conn->query($sql_jugador4_id);
-    if ($resultado_jugador4_id->num_rows > 0) {
-        $fila = $resultado_jugador4_id->fetch_assoc();
-        $jugador4_id = $fila['id'];
-    }
+if ($resultado_jugador4_id->num_rows > 0) {
+    $fila = $resultado_jugador4_id->fetch_assoc();
+    $jugador4_id = $fila['id'];
 }
 
-// Añadir los datos a la tabla partidas, incluyendo el jugador 4 solo si se proporcionó un nombre
+// Añadir los datos a la tabla partidas
 $sql_partidas = "INSERT INTO `partidas` (`tipo_equipo`, `modo_juego`, `lugar_caida`, `posicion_final`, `jugador1_id`, `muertes_jugador1`, `jugador2_id`, `muertes_jugador2`, `jugador3_id`, `muertes_jugador3`, `jugador4_id`, `muertes_jugador4`) 
-                VALUES ('$tipo_equipo', '$modo_juego', '$lugar_caida', '$posicion_final', '$jugador1_id', '$muertes_jugador1', '$jugador2_id', '$muertes_jugador2', '$jugador3_id', '$muertes_jugador3', ";
-if ($jugador4_id !== null) {
-    $sql_partidas .= "'$jugador4_id', '$muertes_jugador4')";
-} else {
-    $sql_partidas .= "NULL, NULL)";
-}
+                VALUES ('$tipo_equipo', '$modo_juego', '$lugar_caida', '$posicion_final', '$jugador1_id', '$muertes_jugador1', '$jugador2_id', '$muertes_jugador2', '$jugador3_id', '$muertes_jugador3', '$jugador4_id', '$muertes_jugador4')";
 
-// Ejecutar la consulta para insertar la partida
 if ($conn->query($sql_partidas) === TRUE) {
     echo '<p>PARTIDA AÑADIDA</p>';
     echo '<a href="index.php">VOLVER A INICIO</a>';
@@ -139,7 +124,8 @@ if (isset($_GET['jugador'])) {
 }
 
 $conn->close();
+
 ?>
 
 </body>
-</html>
+</html> 

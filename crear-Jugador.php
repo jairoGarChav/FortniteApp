@@ -16,7 +16,7 @@ $nombre_jugador = $_GET['nombre'];
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "fortnite_stats";
+$dbname = "fortnite3";
 
 
 
@@ -34,7 +34,7 @@ if(isset($_FILES['avatar'])) {
         $ruta_avatar = $directorio_destino . $archivo_nombre;
         
         // Conectar a la base de datos (aquí deberías tener tus credenciales de conexión)
-        $conexion = new mysqli("localhost", "usuario", "contraseña", "fortnite_stats");
+        $conexion = new mysqli("localhost", "usuario", "contraseña", "fortnite3");
         
         // Verificar la conexión
         if ($conexion->connect_error) {
@@ -69,7 +69,7 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO `jugadores` (`avatar`, `nombre`) VALUES ('" . $avatar_jugador . "', '" . $nombre_jugador . "');";
 
 if ($conn->query($sql) === TRUE) {
-    echo '<p>PARTIDA AÑADIDA</p>';
+    echo '<p>JUGADOR AÑADIDO</p>';
     echo '<a href="index.php">VOLVER A INICIO</a>';
 } else {
     echo 'Error: ' . $sql . '<br>' . $conn->error;
