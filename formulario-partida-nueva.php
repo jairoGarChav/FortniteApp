@@ -51,6 +51,9 @@ $dbname = "fortnite3";
             <fieldset class="partida">
                 <div class="div-tipo-equipo">
                     <p class="tipo-equipo">Tipo de equipo</p>
+                        <!-- <input type="radio" name="equipo" id="duos" value="duos" onclick="desactivarJugadores()"> -->
+                        <input type="radio" name="equipo" id="duos" value="duos">
+                        <label for="duos">Duos</label>
                         <input type="radio" name="equipo" id="trios" value="trios">
                         <label for="trios">Tríos</label>
                         <input type="radio" name="equipo" id="escuadrones" value="escuadrones">
@@ -93,7 +96,7 @@ $dbname = "fortnite3";
                     <input type="number" name="jugador1-muertes" id="jugador1-muertes"> -->
                     <label for="jugador1">J1:</label>
     <input list="lista-jugadores" name="jugador1" id="jugador1">
-    <datalist id="lista-jugadores">
+    <datalist id="lista-jugadores1">
         <?php foreach ($jugadores as $jugador): ?>
             <option value="<?php echo $jugador; ?>">
         <?php endforeach; ?>
@@ -107,7 +110,7 @@ $dbname = "fortnite3";
                     <input type="number" name="jugador2-muertes" id="jugador2-muertes"> -->
                     <label for="jugador2">J2:</label>
     <input list="lista-jugadores" name="jugador2" id="jugador2">
-    <datalist id="lista-jugadores">
+    <datalist id="lista-jugadores2">
         <?php foreach ($jugadores as $jugador): ?>
             <option value="<?php echo $jugador; ?>">
         <?php endforeach; ?>
@@ -121,7 +124,7 @@ $dbname = "fortnite3";
                     <input type="number" name="jugador3-muertes" id="jugador3-muertes"> -->
                     <label for="jugador3">J3:</label>
     <input list="lista-jugadores" name="jugador3" id="jugador3">
-    <datalist id="lista-jugadores">
+    <datalist id="lista-jugadores3">
         <?php foreach ($jugadores as $jugador): ?>
             <option value="<?php echo $jugador; ?>">
         <?php endforeach; ?>
@@ -134,8 +137,8 @@ $dbname = "fortnite3";
                     </label>
                     <input type="number" name="jugador4-muertes" id="jugador4-muertes"> -->
                     <label for="jugador4">J4:</label>
-    <input list="lista-jugadores" name="jugador4" id="jugador4">
-    <datalist id="lista-jugadores">
+    <input list="lista-jugadores4" name="jugador4" id="jugador4">
+    <datalist id="lista-jugadores4">
         <?php foreach ($jugadores as $jugador): ?>
             <option value="<?php echo $jugador; ?>">
         <?php endforeach; ?>
@@ -156,5 +159,63 @@ $dbname = "fortnite3";
             <button>VOLVER A INICIO</button>
         </div>
     </div>
+    <script>
+        document.getElementById('duos').addEventListener('click', desactivarJugadores);
+
+        function desactivarJugadores() {
+    
+
+    var tipoEquipoDuos = document.querySelector('#duos');
+
+
+    var inputJugador3 = document.querySelector('#jugador3');
+    var inputMuertesJugador3 = document.querySelector('#jugador3-muertes');
+
+    var inputJugador4 = document.querySelector('#jugador4');
+    var inputMuertesJugador4 = document.querySelector('#jugador4-muertes');
+
+
+    if (tipoEquipoDuos.checked) {
+        // inputJugador3.setAttribute("disabled", true);
+        inputJugador3.disabled = true;
+        inputMuertesJugador3.disabled = true;
+        inputJugador4.disabled = true;
+        inputMuertesJugador4.disabled = true;
+    } else {
+        // datalistJugadores3.setAttribute("disabled", false);
+        inputJugador3.disabled = false;
+        inputMuertesJugador3.disabled = false;
+        console.log("Datalist desactivado, muertes del jugador 3 activadas");
+        inputJugador4.disabled = false;
+        inputMuertesJugador4.disabled = false;
+        console.log("Datalist desactivado, muertes del jugador 4 activadas");
+    }
+}
+
+
+// function desactivarJugador3() {
+    
+
+//     var tipoEquipoTrios = document.querySelector('#trios');
+
+//     var inputJugador4 = document.querySelector('#jugador4');
+
+//     var inputMuertesJugador4 = document.querySelector('#jugador4-muertes');
+
+//     if (tipoEquipoDuos.checked) {
+//         // inputJugador3.setAttribute("disabled", true);
+//         inputJugador3.disabled = true;
+//         inputMuertesJugador3.disabled = true;
+//         console.log("Datalist y muertes del jugador 3 desactivados");
+//     } else {
+//         // datalistJugadores3.setAttribute("disabled", false);
+//         inputJugador3.disabled = false;
+//         inputMuertesJugador3.disabled = false;
+//         console.log("Datalist desactivado, muertes del jugador 3 activadas");
+//     }
+// }
+
+
+    </script>
 </body>
 </html>

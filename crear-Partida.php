@@ -34,7 +34,8 @@ if ($conn->connect_error) {
 // Obtener el nombre del jugador seleccionado para cada jugador
 $jugador1_nombre = $_GET['jugador1'];
 $jugador2_nombre = $_GET['jugador2'];
-$jugador3_nombre = $_GET['jugador3'];
+// $jugador3_nombre = $_GET['jugador3'];
+$jugador3_nombre = isset($_GET['jugador3']) ? $_GET['jugador3'] : null; // Verificar si se porporcionó un nombre de jugador 3
 $jugador4_nombre = isset($_GET['jugador4']) ? $_GET['jugador4'] : null; // Verificar si se proporcionó un nombre de jugador 4
 
 // Buscar el ID del jugador en la base de datos (para jugadores 1, 2 y 3)
@@ -65,14 +66,25 @@ if ($resultado_jugador2_id->num_rows > 0) {
     $fila = $resultado_jugador2_id->fetch_assoc();
     $jugador2_id = $fila['id'];
 }
-if ($resultado_jugador3_id->num_rows > 0) {
-    $fila = $resultado_jugador3_id->fetch_assoc();
-    $jugador3_id = $fila['id'];
-}
+// if ($resultado_jugador3_id->num_rows > 0) {
+//     $fila = $resultado_jugador3_id->fetch_assoc();
+//     $jugador3_id = $fila['id'];
+// }
 // if ($resultado_jugador4_id->num_rows > 0) {
 //     $fila = $resultado_jugador4_id->fetch_assoc();
 //     $jugador4_id = $fila['id'];
 // }
+
+// Buscar el ID del jugador 3 en la base de datos si se proporcionó un nombre
+$jugador3_id = null;
+if ($jugador3_nombre !== null) {
+    $sql_jugador3_id = "SELECT id FROM jugadores WHERE nombre = '$jugador3_nombre'";
+    $resultado_jugador3_id = $conn->query($sql_jugador3_id);
+    if ($resultado_jugador3_id->num_rows > 0) {
+        $fila = $resultado_jugador3_id->fetch_assoc();
+        $jugador3_id = $fila['id'];
+    }
+}
 
 // Buscar el ID del jugador 4 en la base de datos si se proporcionó un nombre
 $jugador4_id = null;
@@ -87,7 +99,12 @@ if ($jugador4_nombre !== null) {
 
 // Añadir los datos a la tabla partidas, incluyendo el jugador 4 solo si se proporcionó un nombre
 $sql_partidas = "INSERT INTO `partidas` (`tipo_equipo`, `modo_juego`, `lugar_caida`, `posicion_final`, `jugador1_id`, `muertes_jugador1`, `jugador2_id`, `muertes_jugador2`, `jugador3_id`, `muertes_jugador3`, `jugador4_id`, `muertes_jugador4`) 
-                VALUES ('$tipo_equipo', '$modo_juego', '$lugar_caida', '$posicion_final', '$jugador1_id', '$muertes_jugador1', '$jugador2_id', '$muertes_jugador2', '$jugador3_id', '$muertes_jugador3', ";
+                VALUES ('$tipo_equipo', '$modo_juego', '$lugar_caida', '$posicion_final', '$jugador1_id', '$muertes_jugador1', '$jugador2_id', '$muertes_jugador2', ";
+if ($jugador3_id !== null) {
+    $sql_partidas .= "'$jugador3_id', '$muertes_jugador3', ";
+} else {
+    $sql_partidas .= "NULL, NULL, ";
+}
 if ($jugador4_id !== null) {
     $sql_partidas .= "'$jugador4_id', '$muertes_jugador4')";
 } else {
