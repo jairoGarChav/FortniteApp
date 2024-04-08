@@ -558,3 +558,11 @@ table#ranking {
     text-decoration: none;
     color: white;
 }
+
+/* input[type="text"]:disabled {
+    background-color: #f521ec;
+  } */
+  
+  input[type="number"]:disabled {
+    background-color: #f521ec;
+  }
