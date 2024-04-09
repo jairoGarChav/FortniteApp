@@ -115,7 +115,7 @@ muertes_por_partida DESC;
             echo '</tbody>';
             echo '</table>';
         } else {
-            echo "No se encontraron jugadores.";
+            echo "No se encontraron datos para el ranking general.";
         }
 
 
@@ -124,6 +124,12 @@ muertes_por_partida DESC;
         ?>
     </div>
     <div class="container-footer">
+    <div class="ranking-duos">
+            <a href="ranking-duos.php">
+                <img src="img/Duos.jpg" alt="2 personajes de Fortnite">
+                <p>RANKING DUOS</p>
+            </a>
+        </div>
         <div class="ranking-trios">
             <a href="ranking-trios.php">
                 <img src="img/Trios.png" alt="3 personajes de Fortnite">

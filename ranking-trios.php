@@ -113,7 +113,7 @@
             echo '</tbody>';
             echo '</table>';
         } else {
-            echo "No se encontraron jugadores para el ranking de tríos.";
+            echo "No se encontraron datos para el ranking de tríos.";
         }
 
 
@@ -126,6 +126,12 @@
             <a href="ranking-general.php">
                 <img src="img/tarjeta-ranking-general.png" alt="Personajes de Fortnite">
                 <p>RANKING GENERAL</p>
+            </a>
+        </div>
+        <div class="ranking-duos">
+            <a href="ranking-duos.php">
+                <img src="img/Duos.jpg" alt="2 personajes de Fortnite">
+                <p>RANKING DUOS</p>
             </a>
         </div>
         <div class="ranking-escuadrones">

@@ -16,8 +16,10 @@ $posicion_final = $_GET['posicion'];
 
 $muertes_jugador1 = $_GET['muertes_jugador1'];
 $muertes_jugador2 = $_GET['muertes_jugador2'];
-$muertes_jugador3 = $_GET['muertes_jugador3'];
-$muertes_jugador4 = $_GET['muertes_jugador4'];
+// Obtener los datos de muertes de los jugadores 3 y 4 si están presentes en el formulario
+$muertes_jugador3 = isset($_GET['muertes_jugador3']) ? $_GET['muertes_jugador3'] : null;
+$muertes_jugador4 = isset($_GET['muertes_jugador4']) ? $_GET['muertes_jugador4'] : null;
+
 
 $servername = "localhost";
 $username = "root";
@@ -34,9 +36,10 @@ if ($conn->connect_error) {
 // Obtener el nombre del jugador seleccionado para cada jugador
 $jugador1_nombre = $_GET['jugador1'];
 $jugador2_nombre = $_GET['jugador2'];
-// $jugador3_nombre = $_GET['jugador3'];
-$jugador3_nombre = isset($_GET['jugador3']) ? $_GET['jugador3'] : null; // Verificar si se porporcionó un nombre de jugador 3
-$jugador4_nombre = isset($_GET['jugador4']) ? $_GET['jugador4'] : null; // Verificar si se proporcionó un nombre de jugador 4
+// Verificar si se porporcionó un nombre de jugador 3
+$jugador3_nombre = isset($_GET['jugador3']) ? $_GET['jugador3'] : null; 
+// Verificar si se proporcionó un nombre de jugador 4
+$jugador4_nombre = isset($_GET['jugador4']) ? $_GET['jugador4'] : null; 
 
 // Buscar el ID del jugador en la base de datos (para jugadores 1, 2 y 3)
 // ... Código para obtener IDs de jugadores 1, 2 y 3
@@ -113,8 +116,10 @@ if ($jugador4_id !== null) {
 
 // Ejecutar la consulta para insertar la partida
 if ($conn->query($sql_partidas) === TRUE) {
+    echo '<div class="crear-partida">';
     echo '<p>PARTIDA AÑADIDA</p>';
     echo '<a href="index.php">VOLVER A INICIO</a>';
+    echo '</div>';
 } else {
     echo 'Error: ' . $sql_partidas . '<br>' . $conn->error;
 }
@@ -135,7 +140,7 @@ if ($resultado->num_rows > 0) {
     }
 } else {
     // No se encontraron jugadores en la base de datos
-    echo "No se encontraron jugadores.";
+    echo '<p>No se encontraron jugadores</p>';
 }
 
 // Verificar si se ha enviado un jugador desde el formulario
@@ -147,12 +152,14 @@ if (isset($_GET['jugador'])) {
     $sql_insert_jugador = "INSERT INTO jugadores (id) VALUES ('$jugador_id')";
     
     if ($conn->query($sql_insert_jugador) === TRUE) {
-        echo "Nuevo registro insertado correctamente";
+        echo '<p>Nuevo registro insertado correctamente</p>';
     } else {
         echo "Error: " . $sql_insert_jugador . "<br>" . $conn->error;
     }
 } else {
-    echo "No se ha enviado ningún jugador desde el formulario.";
+    echo '<div class="sin-jugadores">';
+    echo '<p>No se ha enviado ningún jugador desde el formulario.</p>';
+    echo '</div>';
 }
 
 $conn->close();
