@@ -532,7 +532,7 @@ td {
 }
 
 .iconos-nav img {
-    max-width: 30px;
+    max-width: 40px;
 }
 
 .container-header {
@@ -555,6 +555,7 @@ table#ranking {
 .iconos-nav a {
     position: relative;
     right: -460px;
+    top: 20px;
 }
 
 .container-footer a {
@@ -578,21 +579,20 @@ table#ranking {
 
   body {
     background-image: url(img/inicio-bg.jpg);
-     /* max-width: 1440px;  */
+     /* max-width: 1440px;  
 
-/*
+
     font-family: sans-serif;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
 }
+*/
 
 .crear-partida, .sin-jugadores {
     max-width: 960px;
-     margin: 150px auto; 
-
-    
+    margin: 420px auto;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -606,7 +606,7 @@ table#ranking {
     max-width: 500px;
     /* padding: 5px 0 20px 0; */
 
-/*    
+    
     border: 2px solid #08b8c9;
     border-radius: 15px;
 }
@@ -630,4 +630,662 @@ table#ranking {
     border-radius: 5px;
 }
 
-  */
+  body {
+    max-width: 1440px;
+    /* max-height: 1024px; */
+    margin: 0 auto;
+    font-family: sans-serif;
+    background-image: url(img/inicio-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 680px;
+    margin: 175px auto;
+}
+
+#h1-inicio {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+
+.tarjeta-partida-nueva, .tarjeta-ver-ranking {
+    background-color: #0D0A27;
+    color: white;
+    height: 214px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-left: 25px;
+    border-radius: 20px;
+}
+
+.tarjetas img {
+    display: block;
+    max-width: 118px;
+    max-height: 118px;
+}
+
+.tarjetas-texto {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 25px;
+}
+
+.tarjetas-texto h2, .tarjetas-texto p {
+    margin: 10px;
+}
+
+.borde-partida-nueva {
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(126deg, #d01fd8 0%, #92eefa 100%);
+    border-radius: 20px;
+}
+
+.borde-ver-ranking {
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(126deg, #92eefa 0%, #d01fd8 100%);
+    border-radius: 20px;
+}
+
+.tarjetas {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.agregar-jugador {
+    background-color: #0D0A27;
+    color: white;
+    /* height: 150px; */
+    padding: 15px 40px;
+    /* display: flex; */
+    /* flex-direction: row; */
+    max-width: 200px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.agregar-jugador img {
+    display: block;
+    max-width: 70px;
+}
+
+.agregar-jugador a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.borde-agregar-jugador {
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(126deg, #92eefa 0%, #d01fd8 100%);
+    border-radius: 20px;
+}
+
+/* HASTA AQUI ES DE LA HOME */
+
+/* DESDE AQUI EMPIEZA LA VISTA DEL FORMULARIO */
+
+body {
+    max-width: 1440px;
+    /* max-height: 1024px; */
+    margin: 0 auto;
+    font-family: sans-serif;
+    background-image: url(img/inicio-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 680px;
+    margin: 75px auto;
+}
+
+#h1-inicio {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+
+.tarjeta-partida-nueva, .tarjeta-ver-ranking {
+    background-color: #0D0A27;
+    color: white;
+    height: 214px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-left: 25px;
+    border-radius: 20px;
+}
+
+.tarjetas img {
+    display: block;
+    max-width: 118px;
+    max-height: 118px;
+}
+
+.tarjetas-texto {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 25px;
+}
+
+.tarjetas-texto h2, .tarjetas-texto p {
+    margin: 10px;
+}
+
+.borde-partida-nueva {
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(126deg, #d01fd8 0%, #92eefa 100%);
+    border-radius: 20px;
+}
+
+.borde-ver-ranking {
+    padding: 3px 3px 3px 3px;
+    background: linear-gradient(126deg, #92eefa 0%, #d01fd8 100%);
+    border-radius: 20px;
+}
+
+.tarjetas {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* HASTA AQUI ES DE LA HOME */
+
+/* DESDE AQUI EMPIEZA formulario-jugador-nuevo */
+
+form#form-agregar-jugador {
+    max-width: 480px;
+    margin: 314px auto;
+    /* margin-top: 30%; */
+    padding: 55px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    border: 2px solid #08b8c9;
+}
+
+form#form-agregar-jugador label {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+form#form-agregar-jugador input {
+    display: block;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+form#form-agregar-jugador input[type="text"] {
+    max-width: 250px;
+    height: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    border: 1px solid #08b8c9;
+    color: #f521ec;
+    /* color: white; */
+    background-color: #0d0a27;
+    margin-bottom: 20px;
+    }
+
+/* HASTA AQUI ES DE formulario-jugador-nuevo */
+
+/* DESDE AQUI EMPIEZA LA VISTA DEL FORMULARIO */
+
+.container-form {
+    max-width: 1024px;
+    margin: 25px auto;
+}
+
+.imagen-formu {
+    max-width: 410px;
+    max-height: 878px;
+    border-radius: 0 20px 20px 0;
+}
+
+.formulario {
+    display: flex;
+    border-radius: 20px 0 0 20px;
+    justify-content: center;
+}
+
+form {
+    max-width: 480px;
+    max-height: 850px;
+    background-color: #0D0A27;
+    padding: 30px;
+    color: white;
+    border-radius: 20px 0 0 20px;
+}
+
+.logo-h1 {
+    background-image: url(img/datos-logo.png);
+    background-position: left center;
+    background-size: 60px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 25px;
+    /* text-align: left; */
+}
+
+#h1-formulario {
+    margin-bottom: 0px;
+}
+
+#h1-formulario, .logo-h1 p {
+    color: white;
+    /* font-size: 27px; */
+}
+
+input[type="number"] {
+    max-width: 50px;
+    margin-left: 20px;
+    height: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    border: 1px solid #f521ec;
+    color: #f521ec;
+    /* color: white; */
+    background-color: #0d0a27;
+}
+
+fieldset.partida {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #08B8C9;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 0 25px 0;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #08B8C9;
+}
+
+fieldset.partida {}
+
+fieldset.partida p {
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-size: 16px;
+}
+
+#h1-formulario {
+    font-size: 16px;
+    font-weight: 900;
+    padding-left: 40px;
+    /* color: #d01fd8 */
+}
+
+div.logo-h1 p {
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 50px;
+    /* color: #d01fd8 */
+    margin-top: 10px;
+}
+
+select#caida {
+    height: 35px;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 600;
+    border: 1px solid #08B8C9;
+    color: #08B8C9;
+    /* color: white; */
+    background-color: #0d0a27;
+}
+
+
+fieldset.estadisticas {
+    max-width: 400px;
+    margin: 10px auto;
+    border: 1px solid #F521EC;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #F521EC;
+    /* padding: 20px; */
+    padding: 15px 0 25px 0;
+}
+
+
+
+.div-titulos-jugadores-muertes {
+    display: flex;
+    gap: 110px;
+    font-size: 16px;
+}
+
+.jugador1, .jugador2, .jugador3, .jugador4 {
+    display: flex;
+    gap: 2px;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="submit"] {
+    display: block;
+    bottom: 25px;
+    max-width: 170px;
+    padding: 10px;
+    margin: 0px auto;
+    background: #0d0a27;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+
+.boton-inicio {
+    max-width: 155px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.boton-inicio a {
+    display: block;
+    background-color: #0d0a27;
+    color: white;
+    border: 1px solid #08b8c9;
+    padding: 10px;
+    border-radius: 5px;
+    /* max-width: 77px; */
+}
+
+/* HASTA AQUI ES DEL FORMULARIO */
+
+/* DESDE AQUI EMPIEZA LA VISTA DEL RANKING GENERAL */
+
+.container-main {
+    max-width: 960px;
+    margin: 50px auto;
+    margin-bottom: 5px;
+    background: #0d0a27;
+    color: white;
+    padding: 20px;
+    border: 1px solid #f521ec;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+thead {
+    /* border: 1px solid #f521ec; */
+    /* border-bottom: 1px solid #f521ec; */
+    /* border-left: 1px solid #f521ec; */
+    /* border-radius: 0px; */
+}
+
+table#ranking {
+    border-collapse: collapse;
+}
+
+tr{
+    height: 45px;
+    border-radius:9px;
+    display:block;
+    border-bottom: #08b8c9 2px solid;
+    margin-bottom: 20px;
+}
+
+th.celda-cabecera {
+    width: 135px;
+}
+
+td {
+    width: 135px;
+}
+
+.container-footer {
+    max-width: 960px;
+    margin: 0px auto;
+    /* background: #0d0a27; */
+    color: white;
+    padding: 20px;
+    /* border: 1px solid #f521ec; */
+    /* border-radius: 20px; */
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    gap: 5px;
+    padding-left: 0;
+}
+
+.container-footer img {
+    max-width: 325px;
+    border-radius: 22px 22px 0 0;
+}
+
+.ranking-trios {
+    background-color: #0d0a27;
+    border: 2px solid #08b8c9;
+    border-radius: 23px;
+}
+
+.ranking-escuadrones, .ranking-duos {
+    background-color: #0d0a27;
+    border: 2px solid #08b8c9;
+    border-radius: 23px;
+}
+
+#jugador-1 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-menen.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#jugador-2 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-bati.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#jugador-3 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-pablin.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#jugador-4 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-bati.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+#jugador-5 {
+    height: 25px;
+    padding-left: 5px;
+    background-image: url(img/avatar-bati.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+}
+
+.iconos-nav img {
+    max-width: 40px;
+}
+
+.container-header {
+    display: flex;
+    justify-content: center;
+}
+
+.iconos-nav {
+    position: absolute;
+    /* right: 50px; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+table#ranking {
+    margin-top: 15px;
+}
+
+.iconos-nav a {
+    position: relative;
+    right: -460px;
+    top: 20px;
+}
+
+.container-footer a {
+    text-decoration: none;
+    color: white;
+}
+
+/* input[type="text"]:disabled {
+    background-color: #f521ec;
+  } */
+  
+  input[type="number"]:disabled {
+    background-color: #f521ec;
+  }
+
+
+
+ 
+  
+/*  
+
+  body {
+    background-image: url(img/inicio-bg.jpg);
+     /* max-width: 1440px;  
+
+
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+*/
+
+.crear-partida, .sin-jugadores {
+    max-width: 960px;
+    margin: 420px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.crear-partida, .sin-jugadores, .jugador-añadido {
+    background-color: #0d0a27;
+    color: white;
+    max-width: 500px;
+    /* padding: 5px 0 20px 0; */
+
+    
+    border: 2px solid #08b8c9;
+    border-radius: 15px;
+}
+
+.crear-partida, .jugador-añadido {
+    padding: 30px 100px;
+    font-size: 25px;
+    font-weight: 600
+}
+
+.crear-partida, .jugador-añadido a {
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: #0d0a27;
+    color: white;
+    font-size: 18px;
+    border: 2px solid #08b8c9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.jugador-añadido {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-width: 500px;
+    margin: 378px auto;
+}
+
+td.jugador {
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-size: 40px;*/
+}
+
+
+
+/* Avatar */
+
+img.img_avatar{
+    width:40px;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    margin-right: 10px;
+    margin-bottom:-15px;
+}

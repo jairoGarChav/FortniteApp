@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir Partida</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
@@ -156,11 +157,13 @@ if (isset($_GET['jugador'])) {
     } else {
         echo "Error: " . $sql_insert_jugador . "<br>" . $conn->error;
     }
-} else {
-    echo '<div class="sin-jugadores">';
-    echo '<p>No se ha enviado ningún jugador desde el formulario.</p>';
-    echo '</div>';
-}
+} 
+
+// else {
+//     echo '<div class="sin-jugadores">';
+//     echo '<p>No se ha enviado ningún jugador desde el formulario.</p>';
+//     echo '</div>';
+// }
 
 $conn->close();
 ?>

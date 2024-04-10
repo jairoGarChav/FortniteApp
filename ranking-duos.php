@@ -14,7 +14,7 @@
             <h1>RANKING DUOS</h1>
             <div class="iconos-nav">
                 <a href="index.php"><img src="img/home-icon.png" alt="Icono de una casa"></a>
-                <a href="index.php"><img src="img/back-icon.png" alt="Icono de un flecha señalando a la izquierda"></a>
+                <!-- <a href="index.php"><img src="img/back-icon.png" alt="Icono de un flecha señalando a la izquierda"></a> -->
             </div>
         </div>
 
@@ -36,6 +36,7 @@
         // Consulta SQL para obtener los datos necesarios para el ranking de duos
         $sql = "SELECT 
                     j.nombre AS nombre_jugador,
+                    j.avatar AS avatar_jugador,
                     j.id AS id_jugador,
                     SUM(muertes_jugador) AS muertes_totales,
                     COUNT(*) AS partidas_totales,

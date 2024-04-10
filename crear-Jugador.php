@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Añadir Jugador</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -69,8 +70,10 @@ if ($conn->connect_error) {
 $sql = "INSERT INTO `jugadores` (`avatar`, `nombre`) VALUES ('" . $avatar_jugador . "', '" . $nombre_jugador . "');";
 
 if ($conn->query($sql) === TRUE) {
+    echo '<div class="jugador-añadido"';
     echo '<p>JUGADOR AÑADIDO</p>';
     echo '<a href="index.php">VOLVER A INICIO</a>';
+    echo '</div>';
 } else {
     echo 'Error: ' . $sql . '<br>' . $conn->error;
 }

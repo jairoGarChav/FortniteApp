@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RANKING GENERAL</title>
+    <title>RANKING DUOS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container-main">
         <div class="container-header">
-            <h1>RANKING GENERAL</h1>
+            <h1>RANKING DUOS</h1>
             <div class="iconos-nav">
                 <a href="index.php"><img src="img/home-icon.png" alt="Icono de una casa"></a>
                 <!-- <a href="index.php"><img src="img/back-icon.png" alt="Icono de un flecha señalando a la izquierda"></a> -->
@@ -33,53 +33,41 @@
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        // Consulta SQL para obtener los datos necesarios para el ranking
+        // Consulta SQL para obtener los datos necesarios para el ranking de duos
         $sql = "SELECT 
-j.nombre AS nombre_jugador,
-j.avatar AS avatar_jugador,
-j.id AS id_jugador,
-SUM(muertes_jugador) AS muertes_totales,
-COUNT(*) AS partidas_totales,
-SUM(muertes_jugador) / COUNT(*) AS muertes_por_partida,
-SUM(CASE WHEN p.posicion_final = 1 THEN 1 ELSE 0 END) AS victorias_totales,
-SUM(CASE WHEN p.posicion_final = 1 THEN 1 ELSE 0 END) / COUNT(*) AS victorias_por_partida
-FROM 
-jugadores j
-JOIN 
-(SELECT 
-    jugador1_id AS id_jugador, 
-    muertes_jugador1 AS muertes_jugador,
-    posicion_final
- FROM 
-    partidas
- UNION ALL
- SELECT 
-    jugador2_id, 
-    muertes_jugador2,
-    posicion_final
- FROM 
-    partidas
- UNION ALL
- SELECT 
-    jugador3_id, 
-    muertes_jugador3,
-    posicion_final
- FROM 
-    partidas
- UNION ALL
- SELECT 
-    jugador4_id, 
-    muertes_jugador4,
-    posicion_final
- FROM 
-    partidas) AS p
-ON 
-j.id = p.id_jugador
-GROUP BY 
-j.id, j.nombre
-ORDER BY 
-muertes_por_partida DESC;
-";
+                    j.nombre AS nombre_jugador,
+                    j.id AS id_jugador,
+                    SUM(muertes_jugador) AS muertes_totales,
+                    COUNT(*) AS partidas_totales,
+                    SUM(muertes_jugador) / COUNT(*) AS muertes_por_partida,
+                    SUM(CASE WHEN p.posicion_final = 1 THEN 1 ELSE 0 END) AS victorias_totales,
+                    SUM(CASE WHEN p.posicion_final = 1 THEN 1 ELSE 0 END) / COUNT(*) AS victorias_por_partida
+                FROM 
+                    jugadores j
+                JOIN 
+                    (SELECT 
+                        jugador1_id AS id_jugador, 
+                        muertes_jugador1 AS muertes_jugador,
+                        posicion_final
+                    FROM 
+                        partidas
+                    WHERE
+                        tipo_equipo = 'duos'
+                    UNION ALL
+                    SELECT 
+                        jugador2_id, 
+                        muertes_jugador2,
+                        posicion_final
+                    FROM 
+                        partidas
+                    WHERE
+                        tipo_equipo = 'duos') AS p
+                ON 
+                    j.id = p.id_jugador
+                GROUP BY 
+                    j.id, j.nombre
+                ORDER BY 
+                    muertes_por_partida DESC;";
 
         $resultado = $conn->query($sql);
 
@@ -103,7 +91,7 @@ muertes_por_partida DESC;
             while ($fila = $resultado->fetch_assoc()) {
                 echo '<tr>';
                 echo '<td class="posicion">' . $posicion . '</td>';
-                echo '<td class="nombre-jugador"><img src="img/'.$fila['avatar_jugador'].'" class="img_avatar">' . $fila['nombre_jugador'] . '</td>';
+                echo '<td class="jugador">' . $fila['nombre_jugador'] . '</td>';
                 echo '<td class="muertes">' . $fila['muertes_totales'] . '</td>';
                 echo '<td class="partidas">' . $fila['partidas_totales'] . '</td>';
                 echo '<td class="muertes-por-partida">' . number_format($fila['muertes_por_partida'], 2) . '</td>';
@@ -116,7 +104,7 @@ muertes_por_partida DESC;
             echo '</tbody>';
             echo '</table>';
         } else {
-            echo "No se encontraron datos para el ranking general.";
+            echo "No se encontraron datos para el ranking de duos.";
         }
 
 
@@ -125,10 +113,10 @@ muertes_por_partida DESC;
         ?>
     </div>
     <div class="container-footer">
-    <div class="ranking-duos">
-            <a href="ranking-duos.php">
-                <img src="img/Duos.jpg" alt="2 personajes de Fortnite">
-                <p>RANKING DUOS</p>
+        <div class="ranking-trios">
+            <a href="ranking-general.php">
+                <img src="img/tarjeta-ranking-general.png" alt="Personajes de Fortnite">
+                <p>RANKING GENERAL</p>
             </a>
         </div>
         <div class="ranking-trios">

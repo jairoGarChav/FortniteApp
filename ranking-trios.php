@@ -14,7 +14,7 @@
             <h1>RANKING TRIOS</h1>
             <div class="iconos-nav">
                 <a href="index.php"><img src="img/home-icon.png" alt="Icono de una casa"></a>
-                <a href="index.php"><img src="img/back-icon.png" alt="Icono de un flecha señalando a la izquierda"></a>
+                <!-- <a href="index.php"><img src="img/back-icon.png" alt="Icono de un flecha señalando a la izquierda"></a> -->
             </div>
         </div>
 
